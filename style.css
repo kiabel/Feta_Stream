@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-color: #212529;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 20px;
+  top: 0;
+  background-color: #1d1f1d;
+  height: 50px;
+  width: 100%;
+}
+
+#brand {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: orange;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#login{
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+#login {
+  border: 1px solid orange;
+}
+
+#login a {
+  color: orange;
+}
+
+.search input[type=text]{
+  width:240px;
+  height:25px;
+  border-radius:4px;
+  border: none;
+}
+
+.search{
+  margin: 5px;
+}
+
+.search button{
+  background-color: #1d1f1d;
+  color: orange;
+  float: center;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+#responsive-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#responsive-icon .bar1,.bar2,.bar3 {
+  width: 35px;
+  height: 2.5px;
+  background-color: orange;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background-color:#222422;
+}
+
+.mobile-menu li {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  nav .nav-right, .nav-left {
+    display: none;
+  }
+  #responsive-icon {
+    display: block;
+  }
+}
+/* #### Desktops #### */
+@media only screen and (min-width: 1024px){
+  .search input[type=text]{
+    width: 480px;
+  }
+}
+
+#topBtn {
+  height: 50px;
+  width: 50px;
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 5%;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: orange;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#topBtn:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.fa-arrow-up{
+  color: orange;
+  font-size:35px;
+}
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+  .search input[type=text]{
+    width:200px;
+  }
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+  .search input[type=text]{
+    width:220px;
+  }
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+  /*### Some CSS ###*/
+}
+
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+  .search input[type=text]{
+    width:200px;
+  }
+}
+
+.mainContainer {
+  margin-top: 96px;
+  margin-bottom: 80px;
+  text-align:center;
+  width: 80%;
+  margin-left:10%;
+}
+
+h3{
+  font-size: 18px;
+  color: orange;
+}
+
+.header{
+  border-radius:50px;
+  background-color: rgb(41, 40, 40);
+  width: 300px;
+  margin: 1rem;
+  text-align: center;
+  padding: 14px 14px;
+}
+
+.ComingsoonMov{
+  width: 100%;
+  position: relative;
+  background-color: rgb(41, 40, 40);
+  display: flex;
+  flex-direction: columun;
+  justify-content: center;
+}
+
+.upcomingMovie{
+  height: 300px;
+  overflow: hidden;
+}
+
+.upCposter{
+  width: 100%;
+}
+
+.upCposter img:hover{
+  opacity: 0.8;
+}
+
+.upcomingMovie img{
+  height: 100%;
+}
+
+.upComingMovInfo{
+  color: white;
+  max-width:300px;
+  background-color: rgb(35, 35, 35);
+}
+
+.upComingMovInfo div{
+  display: flex;
+  align-items: left;
+}
+
+.upCoverviewtext{
+  text-align: justify;
+}
+
+.leftBtn{  
+  left: 0;
+  border-color: orange;
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  opacity:0.8;
+  top: 50%;
+}
+
+.rightBtn{
+  right: 0;
+  border-color: orange;
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  text-align: center;
+  opacity:0.8;
+  top: 50%; 
+}
+
+.fa-angle-left{
+  color: orange;
+}
+
+.fa-angle-right{
+  color: orange;
+}
+
+.topMovies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.topTvs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 200px;
+  height:400px;
+  min-width: 75px;
+  margin: 1rem;
+  background-color: rgb(41, 40, 40);
+  position: relative;
+  border-radius: 5px;
+}
+
+.tv {
+  width: 200px;
+  height:400px;
+  min-width: 75px;
+  margin: 1rem;
+  background-color: rgb(41, 40, 40);
+  position: relative;
+  border-radius: 5px;
+}
+
+.movie-info{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+}
+
+.tv-info{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.tv img {
+  width: 100%;
+}
+
+.date{
+  color: white;
+  position: absolute;
+  right: 0;
+  margin-top: 2px;
+} 
+
+.rate{
+  color: white;
+  position: absolute;
+  left: 20px;
+  margin-top: 2px;
+} 
+
+.movtitle {
+  color: white;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.checked {
+  position: absolute;
+  color: #ffa200;
+  left: 0;
+  margin-top: 2px;
+}
+
+.play{
+  display: block;
+  color: white;
+  width: 80%;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(51, 51, 51);
+  padding: 8px 14px;
+  cursor: pointer;
+  margin-left:10%;
+  position: absolute;
+  bottom: 4px;
+}
+
+.movie img:hover{
+  opacity: 0.8;
+}
+
+.tv img:hover{
+  opacity: 0.8;
+}
+
+.play:hover{
+  background-color: rgb(61, 61, 61); 
+}
+
+.search-result-container{
+  margin-top: 96px;
+  margin-bottom: 80px;
+  text-align:center;
+  width: 80%;
+  margin-left:10%;
+}
+
+.movie-search-result{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tv-search-result{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer{
+  background-color: #212529;
+  position: fixed;
+  color: gray;
+  border-top-width: 1px;
+  border-top-style: solid;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  margin-top: 2px;
+}
