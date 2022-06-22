@@ -1,5 +1,6 @@
 //URLs
-const ApiKey = "api_key=1cf50e6248dc270629e802686245c2c8";
+// your api key here
+const ApiKey = "";
 const BaseUrl = "https://api.themoviedb.org/3";
 const ImgUrl = "https://image.tmdb.org/t/p/w300";
 const PopMovieUrl = BaseUrl + "/movie/popular?" + ApiKey;
@@ -53,36 +54,36 @@ async function getUpcoming(url) {
 //show upcoming movies 
 function upcomingDispaly(data){ 
   ComingsoonMov.innerHTML = '';
-  const firstComing = data[0]
-  const upcomingPoster = ImgUrl + firstComing.backdrop_path;
-  const upcominTtitle = firstComing.title;
-  const upcominRrate = firstComing.vote_average
-  const upcomingId = firstComing.id 
-  const upcomingOverview = firstComing.overview
-  const upcDate = firstComing.release_date
-  const upcomingMovieEl = document.createElement('div');
-  upcomingMovieEl.classList.add('upcomingMovie');
-  upcomingMovieEl.innerHTML = `
-    <div class = "leftBtn">
-    <button style="font-size:24px"><i class="fa fa-angle-left"></i></button>
-  </div>
-  <div class="upCposter">
-    <img src="${upcomingPoster}" alt="${upcominTtitle}" 
-    title="${upcominTtitle}" >
-  </div>
-  <div class="upComingMovInfo">
-    <div class = "upCtitle">Title: ${upcominTtitle}</div>
-    <div class="upCrate">Rated: ${upcominRrate}</div> 
-    <div class="upCdate">Release date: ${upcDate}</div>
-    <div class="upCoverview">Overview:</div>
-    <div class="upCoverviewtext">${upcomingOverview}</div>
-  </div>
-  <div class = "rightBtn">
-    <button style="font-size:24px"><i class="fa fa-angle-right"></i></button>
-  </div>
-  `;
+  for (let i = 0; i < data.length; i++) {
+ 
+    //const firstComing = data[i]
+    const upcomingPoster = ImgUrl + data[i].backdrop_path;
+    const upcominTtitle = data[i].title;
+    const upcominRrate = data[i].vote_average
+    const upcomingId = data[i].id 
+    const upcomingOverview = data[i].overview
+    const upcDate = data[i].release_date
+    const upcomingMovieEl = document.createElement('div');
+    upcomingMovieEl.classList.add('upcomingMovie');
+    upcomingMovieEl.innerHTML = `
+    <div class="upCposter">
+      <img src="${upcomingPoster}" alt="${upcominTtitle}" 
+      title="${upcominTtitle}" >
+    </div>
 
-  ComingsoonMov.appendChild(upcomingMovieEl);
+    <div class="upComingMovInfo">
+      <div class = "upCtitle">${upcominTtitle}</div>
+      <span class="fa fa-star checked"></span>
+      <div class="upCrate">${upcominRrate}</div> 
+      <div class="upCdate">${upcDate}</div>
+      <div class="overviewContainer">
+        <div class="upCoverview">Overview:</div>
+        <div class="upCoverviewtext">${upcomingOverview}</div>
+      </div>
+    </div>
+    `;
+    ComingsoonMov.appendChild(upcomingMovieEl);
+  }
 }
 
 // Get popular movies
@@ -161,7 +162,7 @@ form.addEventListener('submit', (e) => {
   const searchTerm = search.value;
 
   if (searchTerm && searchTerm !== '') {
-    window.location.href = 'search.html';
+    //window.location.href = 'search.html';
     multSearch(SearchUrl + searchTerm);
 
     search.value = '';
@@ -197,7 +198,6 @@ function showSearchResult(results) {
         <button class="play">Watch Now</button>
       </div>
     `;
-
     movieSearchResult.appendChild(movieEl);
   });
 }
